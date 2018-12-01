@@ -1,0 +1,9 @@
+        
+Within onCreate:
+        
+        final ImageButton takePhoto = findViewById(R.id.takePhoto);
+        takePhoto.setOnClickListener(v -> {
+            Log.d(TAG, "Take photo button clicked");
+            startTakePhoto();
+        });
+        
