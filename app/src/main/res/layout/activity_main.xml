@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="Description line Description line Description line Description line Description line"
+            android:text="Choose your criteria to search by"
             android:textAlignment="center"
             android:textColor="@android:color/holo_blue_light"
             android:textSize="18sp" />
@@ -62,7 +62,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@color/buttons"
-        android:text="Button"
+        android:text="RANDOM CHOICE!"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -73,7 +74,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/buttons"
-        android:text="Button"
+        android:text="Type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -84,7 +85,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/buttons"
-        android:text="Button"
+        android:text="Participants"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -95,7 +96,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/buttons"
-        android:text="Button"
+        android:text="Price"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
