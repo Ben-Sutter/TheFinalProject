@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         tlButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Temp message to remind you this is Top Left", Toast.LENGTH_SHORT).show();
                 launchTL();
             }
         });
