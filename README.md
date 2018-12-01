@@ -33,6 +33,8 @@ LINKS:
    
   
 COOL ITEMS TO MAYBE USE:
+
   Snackbar (Similar to toast, but at the bottom):
+  
     Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
