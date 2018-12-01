@@ -57,19 +57,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void launchTL() {
-        Intent intent = new Intent(this, TopLeft_Activity.class);
+        Intent intent = new Intent(this, TopLeftActivity.class);
         startActivity(intent);
     }
     private void launchTR() {
-        Intent intent = new Intent(this, TopRight_Activity.class);
+        Intent intent = new Intent(this, TopRightActivity.class);
         startActivity(intent);
     }
     private void launchBL() {
-        Intent intent = new Intent(this, BottomLeft_Activity.class);
+        Intent intent = new Intent(this, BottomLeftActivity.class);
         startActivity(intent);
     }
     private void launchBR() {
-        Intent intent = new Intent(this, BottomRight_Activity.class);
+        Intent intent = new Intent(this, BottomRightActivity.class);
         startActivity(intent);
     }
 }

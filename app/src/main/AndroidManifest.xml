@@ -16,22 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TopLeft_Activity"
-            android:label="@string/title_activity_top_left_"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".TopRight_Activity"
-            android:label="@string/title_activity_top_right_"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".BottomLeft_Activity"
-            android:label="@string/title_activity_bottom_left_"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".BottomRight_Activity"
-            android:label="@string/title_activity_bottom_right_"
-            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".BottomRightActivity" />
+        <activity android:name=".TopLeftActivity" />
+        <activity android:name=".BottomLeftActivity" />
+        <activity android:name=".TopRightActivity"></activity>
     </application>
 
 </manifest>
