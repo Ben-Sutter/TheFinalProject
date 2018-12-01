@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">finalProject</string>
+    <string name="title_activity_top_left_">TopLeft_Activity</string>
+    <string name="title_activity_top_right_">TopRight_Activity</string>
+    <string name="title_activity_bottom_left_">BottomLeft_Activity</string>
+    <string name="title_activity_bottom_right_">BottomRight_Activity</string>
 </resources>
