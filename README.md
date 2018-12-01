@@ -30,3 +30,9 @@ Picture to text always used.
 LINKS:
 
    * UI: https://www.youtube.com/watch?v=riBAAC0ZwbU
+   
+  
+COOL ITEMS TO MAYBE USE:
+  Snackbar (Similar to toast, but at the bottom):
+    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
