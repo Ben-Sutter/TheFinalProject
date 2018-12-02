@@ -34,11 +34,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/randomEventString"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string"
+            android:text=" "
             android:textAlignment="center" />
     </LinearLayout>
 
