@@ -49,6 +49,11 @@ public class BottomLeftActivity extends AppCompatActivity {
         });
     }
 
+    //Calling to the api
+    //String buttonInt = String.valueOf(buttonChoice);
+    //URL = "http://www.boredapi.com/api/activity?participants="
+    //API call = URL + buttonInt
+
     //private String callParticipantAPI(final int idNum) {
 
     //}
