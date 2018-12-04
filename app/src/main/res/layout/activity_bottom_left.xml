@@ -36,7 +36,7 @@
         app:layout_constraintVertical_bias="0.0"><![CDATA[>]]></LinearLayout>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/partResults"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -67,18 +67,19 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/partResults"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="@+id/linearLayout2">
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

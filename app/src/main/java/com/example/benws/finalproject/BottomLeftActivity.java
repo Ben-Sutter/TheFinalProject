@@ -4,9 +4,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class BottomLeftActivity extends AppCompatActivity {
+
+    final int ID_SUBTRACT = 2131296385;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +27,29 @@ public class BottomLeftActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        final TextView result = findViewById(R.id.partResults);
+
+        RadioButton button1 = findViewById(R.id.radioButton1);
+        RadioButton button2 = findViewById(R.id.radioButton2);
+        RadioButton button3 = findViewById(R.id.radioButton3);
+        RadioButton button4 = findViewById(R.id.radioButton4);
+
+        final RadioGroup g = findViewById(R.id.radioGroup);
+
+        Button sub = findViewById(R.id.participantsSubmitButton);
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selected = g.getCheckedRadioButtonId() - ID_SUBTRACT;
+
+
+                result.setText(String.valueOf(selected));
+            }
+        });
+    }
+
+    private void callParticipantAPI(final int idNum) {
+
     }
 }
