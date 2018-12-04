@@ -4,4 +4,17 @@
     <string name="title_activity_top_right_">TopRight_Activity</string>
     <string name="title_activity_bottom_left_">BottomLeft_Activity</string>
     <string name="title_activity_bottom_right_">BottomRight_Activity</string>
+    <string-array
+        name="type_array"
+        id="@+id/types">
+        <item>education</item>
+        <item>recreational</item>
+        <item>social</item>
+        <item>diy</item>
+        <item>charity</item>
+        <item>cooking</item>
+        <item>relaxation</item>
+        <item>music</item>
+        <item>busywork</item>
+    </string-array>
 </resources>
