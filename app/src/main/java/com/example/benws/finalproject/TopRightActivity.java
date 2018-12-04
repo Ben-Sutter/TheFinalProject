@@ -41,5 +41,8 @@ public class TopRightActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "" + spinnerText, Toast.LENGTH_SHORT).show();
             }
         });
+
+        //URL: "http://www.boredapi.com/api/activity?type=recreational"
+        //API request: URL + spinner.getSelectedItem().toString()
     }
 }

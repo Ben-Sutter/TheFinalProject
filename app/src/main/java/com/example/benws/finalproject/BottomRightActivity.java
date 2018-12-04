@@ -56,5 +56,8 @@ public class BottomRightActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "" + simpleSeekBar.getProgress(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        //URL: http://www.boredapi.com/api/activity?minprice=0&maxprice=
+        //API Request: URL + (double)(simpleSeekBar.getProgress() / 100)
     }
 }

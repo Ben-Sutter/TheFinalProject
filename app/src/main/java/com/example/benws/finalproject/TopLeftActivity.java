@@ -101,5 +101,7 @@ public class TopLeftActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+        //URL http://www.boredapi.com/api/activity
     }
 }
