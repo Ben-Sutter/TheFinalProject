@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class BottomRightActivity extends AppCompatActivity {
@@ -24,11 +25,29 @@ public class BottomRightActivity extends AppCompatActivity {
             }
         });
 
-        final SeekBar simpleSeekBar=(SeekBar)findViewById(R.id.seekBar); // initiate the seek bar
+        final SeekBar simpleSeekBar = findViewById(R.id.seekBar); // initiate the seek bar
+
+        final TextView currPrice = findViewById(R.id.currentPrice);
 
         simpleSeekBar.setBackgroundColor(Color.GRAY); // green background color for the seek bar
 
-        simpleSeekBar.setOnSeekBarChangeListener();
+        simpleSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
+                currPrice.setText("Max Price: $" + String.valueOf(progress));
+            }
+
+        });
 
         Button submitButton=(Button)findViewById(R.id.costSubmitButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
