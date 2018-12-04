@@ -41,15 +41,15 @@ public class BottomLeftActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int selected = g.getCheckedRadioButtonId() - ID_SUBTRACT;
-
-
-                result.setText(String.valueOf(selected));
+                int selected = g.getCheckedRadioButtonId();
+                RadioButton checkedRadioButton = findViewById(selected);
+                int buttonChoice = Integer.parseInt(checkedRadioButton.getText().toString());
+                result.setText(String.valueOf(buttonChoice));
             }
         });
     }
 
-    private void callParticipantAPI(final int idNum) {
+    //private String callParticipantAPI(final int idNum) {
 
-    }
+    //}
 }
