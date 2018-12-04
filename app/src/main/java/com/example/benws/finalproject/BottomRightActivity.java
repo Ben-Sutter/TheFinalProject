@@ -1,9 +1,12 @@
 package com.example.benws.finalproject;
 
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class BottomRightActivity extends AppCompatActivity {
@@ -17,8 +20,19 @@ public class BottomRightActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(), "And we are headed back!", Toast.LENGTH_SHORT).show();
                 finish();
+            }
+        });
+
+        final SeekBar simpleSeekBar=(SeekBar)findViewById(R.id.seekBar); // initiate the seek bar
+
+        simpleSeekBar.setBackgroundColor(Color.GRAY); // green background color for the seek bar
+
+        Button submitButton=(Button)findViewById(R.id.costSubmitButton);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "" + simpleSeekBar.getProgress(), Toast.LENGTH_SHORT).show();
             }
         });
     }
