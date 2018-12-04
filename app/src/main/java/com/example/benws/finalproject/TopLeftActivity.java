@@ -62,7 +62,6 @@ public class TopLeftActivity extends AppCompatActivity {
     }
 
     private void setRandomText() {
-        Toast.makeText(getApplicationContext(),"in set random", Toast.LENGTH_SHORT).show();
         startAPICall();
         String randomActivityText = string;
         ((TextView)findViewById(R.id.randomEventString)).setText(randomActivityText);
@@ -84,10 +83,12 @@ public class TopLeftActivity extends AppCompatActivity {
                             string += response.toString();
                         }
                     }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(final VolleyError error) {
-                }
-            }) {
+                        @Override
+                        public void onErrorResponse(final VolleyError error) {
+                            Toast.makeText(getApplicationContext(),"Object request error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            ) {
                 @Override
                 public Map<String, String> getHeaders() {
                     Map<String, String> params = new HashMap<String, String>();

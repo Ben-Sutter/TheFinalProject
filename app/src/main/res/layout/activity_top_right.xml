@@ -32,4 +32,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
+
+    <resources>
+        <string-array
+            android:name="type_array"
+            android:id="@+id/types">
+            <item>education</item>
+            <item>recreational</item>
+            <item>social</item>
+            <item>diy</item>
+            <item>charity</item>
+            <item>cooking</item>
+            <item>relaxation</item>
+            <item>music</item>
+            <item>busywork</item>
+        </string-array>
+    </resources>
+
 </android.support.constraint.ConstraintLayout>
