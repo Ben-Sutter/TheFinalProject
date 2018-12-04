@@ -28,6 +28,8 @@ public class BottomRightActivity extends AppCompatActivity {
 
         simpleSeekBar.setBackgroundColor(Color.GRAY); // green background color for the seek bar
 
+        simpleSeekBar.setOnSeekBarChangeListener();
+
         Button submitButton=(Button)findViewById(R.id.costSubmitButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
