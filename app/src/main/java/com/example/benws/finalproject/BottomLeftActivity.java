@@ -80,12 +80,12 @@ public class BottomLeftActivity extends AppCompatActivity {
         String randomPartName;
         int randomPartPrice = 0;
         int randomPartPeople = 0;
-        int randomPartAccess = 0;
+        double randomPartAccess = 0;
         try {
             randomPartName = input.getString("activity");
-            randomPartPrice = 100 * input.getInt("price");
+            randomPartPrice = (int)(100 * input.getDouble("price"));
             randomPartPeople = input.getInt("participants");
-            randomPartAccess = input.getInt("accessibility");
+            randomPartAccess = input.getDouble("accessibility");
         } catch (JSONException e) {
             randomPartName = "ERROR";
         }

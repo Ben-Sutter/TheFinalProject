@@ -70,19 +70,26 @@ public class TopLeftActivity extends AppCompatActivity {
 
     void setTheTextForReal() {
         String randomActivityName;
+        String randomActivityType;
         int randomActivityPrice = 0;
         int randomActivityPeople = 0;
-        int randomActivityAccess = 0;
+        double randomActivityAccess = 0;
         try {
             randomActivityName = input.getString("activity");
-            randomActivityPrice = 100 * input.getInt("price");
+            randomActivityType = input.getString("type");
+            //The next two lines put the activity in Sentence Case.
+            randomActivityType = randomActivityType.toUpperCase();
+            randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
+            randomActivityPrice = (int)(100 * input.getDouble("price"));
             randomActivityPeople = input.getInt("participants");
-            randomActivityAccess = input.getInt("accessibility");
+            randomActivityAccess = input.getDouble("accessibility");
         } catch (JSONException e) {
             randomActivityName = "ERROR";
+            randomActivityType = "ERROR";
         }
         String textInAll =
-                randomActivityName + "\nPrice: $" + randomActivityPrice
+                randomActivityName + "\nType: " + randomActivityType
+                        + "\nPrice: $" + randomActivityPrice
                         + "\nParticipants: " + randomActivityPeople
                         + "\nAccessibility: " + randomActivityAccess;
         ((TextView) findViewById(R.id.randomEventString)).setText(textInAll);

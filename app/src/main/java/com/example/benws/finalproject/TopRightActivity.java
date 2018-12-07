@@ -43,6 +43,8 @@ public class TopRightActivity extends AppCompatActivity {
             }
         });
 
+        TextView result = findViewById(R.id.typeResult);
+
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -70,12 +72,12 @@ public class TopRightActivity extends AppCompatActivity {
         String randomPartName;
         int randomPartPrice = 0;
         int randomPartPeople = 0;
-        int randomPartAccess = 0;
+        double randomPartAccess = 0;
         try {
             randomPartName = input.getString("activity");
-            randomPartPrice = 100 * input.getInt("price");
+            randomPartPrice = (int)(100 * input.getDouble("price"));
             randomPartPeople = input.getInt("participants");
-            randomPartAccess = input.getInt("accessibility");
+            randomPartAccess = input.getDouble("accessibility");
         } catch (JSONException e) {
             randomPartName = "ERROR";
         }
@@ -88,7 +90,6 @@ public class TopRightActivity extends AppCompatActivity {
 
 
     void startAPICall(final String typeText) {
-        final String TYPE_URL = "http://www.boredapi.com/api/activity?type=" + typeText;
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
@@ -98,7 +99,6 @@ public class TopRightActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             input = response;
-                            Toast.makeText(getApplicationContext(), "" + input, Toast.LENGTH_SHORT).show();
                             Log.d(TAG, response.toString());
                             setTheTextForReal();
                         }
