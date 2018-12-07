@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -65,8 +66,26 @@ public class TopLeftActivity extends AppCompatActivity {
 
     void setRandomText() {
         startAPICall();
-        //String randomActivityText = input.getString("activity");
-        ((TextView)findViewById(R.id.randomEventString)).setText(randomActivityText);
+    }
+
+    void setTheTextForReal() {
+        String randomActivityName;
+        int randomActivityPrice = 0;
+        int randomActivityPeople = 0;
+        int randomActivityAccess = 0;
+        try {
+            randomActivityName = input.getString("activity");
+            randomActivityPrice = 100 * input.getInt("price");
+            randomActivityPeople = input.getInt("participants");
+            randomActivityAccess = input.getInt("accessibility");
+        } catch (JSONException e) {
+            randomActivityName = "ERROR";
+        }
+        String textInAll =
+                randomActivityName + "\nPrice: " + randomActivityPrice
+                        + "\nParticipants" + randomActivityPeople
+                        + "\nAccesibility" + randomActivityAccess;
+        ((TextView) findViewById(R.id.randomEventString)).setText(textInAll);
     }
 
 
@@ -80,7 +99,9 @@ public class TopLeftActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             input = response;
+                            //Toast.makeText(getApplicationContext(), "" + input, Toast.LENGTH_SHORT).show();
                             Log.d(TAG, response.toString());
+                            setTheTextForReal();
                         }
                     }, new Response.ErrorListener() {
                         @Override
@@ -101,8 +122,6 @@ public class TopLeftActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         //URL http://www.boredapi.com/api/activity
     }
 }
