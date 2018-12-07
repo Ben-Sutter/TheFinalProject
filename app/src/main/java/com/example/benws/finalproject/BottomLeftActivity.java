@@ -76,7 +76,7 @@ public class BottomLeftActivity extends AppCompatActivity {
         startAPICall(numPeople);
     }
 
-    void setTheTextForReal(int numPeople) {
+    void setTheTextForReal() {
         String randomPartName;
         int randomPartPrice = 0;
         int randomPartPeople = 0;
@@ -109,7 +109,7 @@ public class BottomLeftActivity extends AppCompatActivity {
                             input = response;
                             //Toast.makeText(getApplicationContext(), "" + input, Toast.LENGTH_SHORT).show();
                             Log.d(TAG, response.toString());
-                            setTheTextForReal(numPeople);
+                            setTheTextForReal();
                         }
                     }, new Response.ErrorListener() {
                 @Override
