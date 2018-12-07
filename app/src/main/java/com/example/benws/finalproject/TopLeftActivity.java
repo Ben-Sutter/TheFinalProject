@@ -82,9 +82,9 @@ public class TopLeftActivity extends AppCompatActivity {
             randomActivityName = "ERROR";
         }
         String textInAll =
-                randomActivityName + "\nPrice: " + randomActivityPrice
-                        + "\nParticipants" + randomActivityPeople
-                        + "\nAccesibility" + randomActivityAccess;
+                randomActivityName + "\nPrice: $" + randomActivityPrice
+                        + "\nParticipants: " + randomActivityPeople
+                        + "\nAccessibility: " + randomActivityAccess;
         ((TextView) findViewById(R.id.randomEventString)).setText(textInAll);
     }
 
