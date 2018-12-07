@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:max="100"
             android:paddingTop="20dp"
-            android:paddingBottom="20dp"/>
+            android:paddingBottom="20dp" />
 
     </LinearLayout>
 

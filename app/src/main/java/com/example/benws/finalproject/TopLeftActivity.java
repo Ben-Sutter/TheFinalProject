@@ -23,9 +23,12 @@ import java.util.Map;
 
 public class TopLeftActivity extends AppCompatActivity {
 
+    private static final String TAG = "FinalProject:TopLeft";
+
     private static RequestQueue requestQueue;
 
-    String string = "";
+
+    JSONObject input;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,11 @@ public class TopLeftActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_top_left);
 
-        setRandomText();
-
         //This section of code is used to return to the main activity.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(), "And we are headed back!", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -52,24 +52,25 @@ public class TopLeftActivity extends AppCompatActivity {
         newRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"it clicked", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Start API button clicked");
                 setRandomText();
+
             }
         });
 
         TextView randomText = findViewById(R.id.randomEventString);
+        setRandomText();
 
     }
 
-    private void setRandomText() {
+    void setRandomText() {
         startAPICall();
-        String randomActivityText = string;
+        //String randomActivityText = input.getString("activity");
         ((TextView)findViewById(R.id.randomEventString)).setText(randomActivityText);
     }
 
 
     void startAPICall() {
-        Toast.makeText(getApplicationContext(),"in api", Toast.LENGTH_SHORT).show();
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
@@ -78,14 +79,13 @@ public class TopLeftActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(final JSONObject response) {
-                            Toast.makeText(getApplicationContext(),"made it", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-                            string += response.toString();
+                            input = response;
+                            Log.d(TAG, response.toString());
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(final VolleyError error) {
-                            Toast.makeText(getApplicationContext(),"Object request error", Toast.LENGTH_SHORT).show();
+                            Log.w(TAG, error.toString());
                         }
                     }
             ) {
@@ -93,6 +93,7 @@ public class TopLeftActivity extends AppCompatActivity {
                 public Map<String, String> getHeaders() {
                     Map<String, String> params = new HashMap<String, String>();
                     params.put("Ocp-Apim-Subscription-Key", "YOUR_API_KEY");
+                    Log.d(TAG, params.toString());
                     return params;
                 }
             };
