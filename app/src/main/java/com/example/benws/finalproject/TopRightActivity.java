@@ -16,10 +16,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +34,9 @@ public class TopRightActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        requestQueue = Volley.newRequestQueue(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_right);
 
@@ -67,11 +72,15 @@ public class TopRightActivity extends AppCompatActivity {
 
     void setTheTextForReal() {
         String randomPartName;
+        String randomActivityType = "";
         int randomPartPrice = 0;
         int randomPartPeople = 0;
         double randomPartAccess = 0;
         try {
-            randomPartName = input.getString("activity");
+            randomPartName = input.getString("activity");randomActivityType = input.getString("type");
+            //The next two lines put the activity in Sentence Case.
+            randomActivityType = randomActivityType.toUpperCase();
+            randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
             randomPartPrice = (int)(100 * input.getDouble("price"));
             randomPartPeople = input.getInt("participants");
             randomPartAccess = input.getDouble("accessibility");
@@ -79,7 +88,8 @@ public class TopRightActivity extends AppCompatActivity {
             randomPartName = "ERROR";
         }
         String textInAll =
-                randomPartName + "\nPrice: $" + randomPartPrice
+                randomPartName + "\nType: " + randomActivityType
+                        + "\nPrice: $" + randomPartPrice
                         + "\nParticipants: " + randomPartPeople
                         + "\nAccessibility: " + randomPartAccess;
         ((TextView) findViewById(R.id.typeResult)).setText(textInAll);
