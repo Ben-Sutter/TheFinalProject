@@ -24,7 +24,7 @@
             android:layout_marginTop="30dp"
             android:text="Activity Generator"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/textPrimary"
             android:textSize="30sp"
             android:textStyle="bold" />
 
