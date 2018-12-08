@@ -112,6 +112,7 @@ public class TopRightActivity extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(final VolleyError error) {
+                    Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_SHORT).show();
                     Log.w(TAG, error.toString());
                 }
             }
@@ -124,6 +125,7 @@ public class TopRightActivity extends AppCompatActivity {
                     return params;
                 }
             };
+            Toast.makeText(getApplicationContext(), "" + jsonObjectRequest, Toast.LENGTH_SHORT).show();
             requestQueue.add(jsonObjectRequest);
         } catch (Exception e) {
             e.printStackTrace();
