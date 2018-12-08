@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorBackground"
     tools:context=".TopRightActivity">
 
     <android.support.design.widget.FloatingActionButton
@@ -14,6 +14,7 @@
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="17dp"
         android:clickable="true"
+        app:backgroundTint="@color/colorButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_revert" />
@@ -26,7 +27,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="128dp"
-        android:background="@color/otherColor"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/fab"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +44,7 @@
             android:layout_marginBottom="274dp"
             android:text="What type of Activity do you want to do?"
             android:textAlignment="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorTextPrimary"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -61,7 +62,7 @@
         android:layout_marginBottom="274dp"
         android:text="Results Based On Activity Type Will Be Replace This Text"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorTextPrimary"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
@@ -75,6 +76,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
         android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="@color/colorPrimary"
         android:spinnerMode="dropdown"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
@@ -93,9 +95,9 @@
         android:layout_marginStart="144dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="144dp"
-        android:background="@color/buttons"
+        android:background="@color/colorButton"
         android:text="Submit"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@color/colorTextSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
