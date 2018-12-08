@@ -105,7 +105,6 @@ public class TopRightActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(final JSONObject response) {
-                            Toast.makeText(getApplicationContext(), "" + response, Toast.LENGTH_SHORT).show();
                             input = response;
                             Log.d(TAG, response.toString());
                             setTheTextForReal();

@@ -79,11 +79,16 @@ public class BottomLeftActivity extends AppCompatActivity {
 
     void setTheTextForReal() {
         String randomPartName;
+        String randomActivityType = "";
         int randomPartPrice = 0;
         int randomPartPeople = 0;
         double randomPartAccess = 0;
         try {
             randomPartName = input.getString("activity");
+            randomActivityType = input.getString("type");
+            //The next two lines put the activity in Sentence Case.
+            randomActivityType = randomActivityType.toUpperCase();
+            randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
             randomPartPrice = (int)(100 * input.getDouble("price"));
             randomPartPeople = input.getInt("participants");
             randomPartAccess = input.getDouble("accessibility");
@@ -91,7 +96,8 @@ public class BottomLeftActivity extends AppCompatActivity {
             randomPartName = "ERROR";
         }
         String textInAll =
-                randomPartName + "\nPrice: $" + randomPartPrice
+                randomPartName + "\nType: " + randomActivityType
+                        + "\nPrice: $" + randomPartPrice
                         + "\nParticipants: " + randomPartPeople
                         + "\nAccessibility: " + randomPartAccess;
         ((TextView) findViewById(R.id.partResults)).setText(textInAll);
