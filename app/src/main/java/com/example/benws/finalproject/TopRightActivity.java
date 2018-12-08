@@ -59,14 +59,11 @@ public class TopRightActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String spinnerText = spinner.getSelectedItem().toString();
-                setPartText(spinnerText);
+                startAPICall(spinnerText);
             }
         });
     }
 
-    void setPartText(String typeText) {
-        startAPICall(typeText);
-    }
 
     void setTheTextForReal() {
         String randomPartName;
