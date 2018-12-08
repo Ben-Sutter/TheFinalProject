@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         trButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Temp message to remind you this is Top Right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Temp message to remind you this is Top Right", Toast.LENGTH_SHORT).show();
                 launchTR();
             }
         });
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         blButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Temp message to remind you this is Bottom Left", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Temp message to remind you this is Bottom Left", Toast.LENGTH_SHORT).show();
                 launchBL();
             }
         });
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         brButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Temp message to remind you this is Bottom Right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Temp message to remind you this is Bottom Right", Toast.LENGTH_SHORT).show();
                 launchBR();
             }
         });
