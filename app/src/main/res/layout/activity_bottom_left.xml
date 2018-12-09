@@ -44,7 +44,7 @@
         android:layout_marginTop="275dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="274dp"
-        android:text="Results Based On Quantity of Participants Will Replace This Text"
+        android:text="  "
         android:textAlignment="center"
         android:textColor="@color/colorTextPrimary"
         android:textStyle="bold"

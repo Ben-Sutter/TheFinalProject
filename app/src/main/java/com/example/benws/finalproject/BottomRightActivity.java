@@ -90,7 +90,11 @@ public class BottomRightActivity extends AppCompatActivity {
             randomActivityType = input.getString("type");
             //The next two lines put the activity in Sentence Case.
             randomActivityType = randomActivityType.toUpperCase();
-            randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
+            if (randomActivityType.equalsIgnoreCase("diy")) {
+                randomActivityType = randomActivityType.toUpperCase();
+            } else {
+                randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
+            }
             randomActivityPrice = (int)(100 * input.getDouble("price"));
             randomActivityPeople = input.getInt("participants");
             randomActivityAccess = input.getDouble("accessibility");

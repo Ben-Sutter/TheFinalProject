@@ -64,7 +64,7 @@ public class TopRightActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String spinnerText = spinner.getSelectedItem().toString();
-                startAPICall(spinnerText);
+                startAPICall(spinnerText.toLowerCase());
             }
         });
     }
@@ -80,7 +80,11 @@ public class TopRightActivity extends AppCompatActivity {
             randomPartName = input.getString("activity");randomActivityType = input.getString("type");
             //The next two lines put the activity in Sentence Case.
             randomActivityType = randomActivityType.toUpperCase();
-            randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
+            if (randomActivityType.equalsIgnoreCase("diy")) {
+                randomActivityType = randomActivityType.toUpperCase();
+            } else {
+                randomActivityType = randomActivityType.substring(0,1) + randomActivityType.substring(1).toLowerCase();
+            }
             randomPartPrice = (int)(100 * input.getDouble("price"));
             randomPartPeople = input.getInt("participants");
             randomPartAccess = input.getDouble("accessibility");
@@ -112,7 +116,6 @@ public class TopRightActivity extends AppCompatActivity {
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(final VolleyError error) {
-                    Toast.makeText(getApplicationContext(), "ERROR", Toast.LENGTH_SHORT).show();
                     Log.w(TAG, error.toString());
                 }
             }
@@ -125,7 +128,6 @@ public class TopRightActivity extends AppCompatActivity {
                     return params;
                 }
             };
-            Toast.makeText(getApplicationContext(), "" + jsonObjectRequest, Toast.LENGTH_SHORT).show();
             requestQueue.add(jsonObjectRequest);
         } catch (Exception e) {
             e.printStackTrace();
