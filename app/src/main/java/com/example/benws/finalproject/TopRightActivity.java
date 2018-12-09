@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TopRightActivity extends AppCompatActivity {
-
+    //delet
     private static final String TAG = "FinalProject:TopLeft";
 
     private static RequestQueue requestQueue;
